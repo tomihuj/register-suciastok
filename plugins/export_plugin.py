@@ -16,4 +16,5 @@ def register_plugin(app):
         except Exception as e:
             messagebox.showerror("Error", f"Error exporting data: {e}")
 
-    tk.Button(app.plugin_frame, text="Export CSV", command=export_to_csv).pack(side=tk.LEFT, padx=5)
+    export_button = tk.Button(app.plugin_frame, text="Export CSV", command=export_to_csv)
+    app.register_plugin_widget(export_button)

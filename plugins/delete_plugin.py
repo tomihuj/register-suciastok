@@ -19,4 +19,5 @@ def register_plugin(app):
         except Exception as e:
             messagebox.showerror("Error", f"Error deleting row: {e}")
 
-    tk.Button(app.plugin_frame, text="Delete Row", command=delete_row).pack(side=tk.LEFT, padx=5)
+    delete_button = tk.Button(app.plugin_frame, text="Delete Row", command=delete_row)
+    app.register_plugin_widget(delete_button)

@@ -161,4 +161,5 @@ def register_plugin(app):
 
         tk.Button(settings_window, text="Add Column", command=add_column).grid(row=6, column=0, pady=10)
 
-    tk.Button(app.plugin_frame, text="Settings", command=open_settings).pack(side=tk.LEFT, padx=5)
+    settings_button = tk.Button(app.plugin_frame, text="Settings", command=open_settings)
+    app.register_plugin_widget(settings_button)

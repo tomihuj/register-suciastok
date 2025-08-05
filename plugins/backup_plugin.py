@@ -28,4 +28,5 @@ def register_plugin(app):
         except Exception as e:
             messagebox.showerror("Error", f"Error creating backup: {e}")
 
-    tk.Button(app.plugin_frame, text="Create Backup", command=create_backup).pack(side=tk.LEFT, padx=5)
+    backup_button = tk.Button(app.plugin_frame, text="Create Backup", command=create_backup)
+    app.register_plugin_widget(backup_button)

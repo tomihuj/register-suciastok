@@ -1,4 +1,5 @@
 
 def register_plugin(app):
     import tkinter as tk
-    tk.Button(app.plugin_frame, text="Refresh Table", command=app.refresh_table).pack(side=tk.LEFT, padx=5)
+    refresh_button = tk.Button(app.plugin_frame, text="Refresh Table", command=app.refresh_table)
+    app.register_plugin_widget(refresh_button)
