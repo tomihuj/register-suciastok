@@ -66,5 +66,7 @@ def register_plugin(app):
 
         tk.Button(login_window, text="Login", command=validate_login).grid(row=2, columnspan=2, pady=10)
 
-    tk.Button(app.plugin_frame, text="Configure Remote DB", command=configure_remote_db).pack(side=tk.LEFT, padx=5)
-    tk.Button(app.plugin_frame, text="Login", command=login).pack(side=tk.LEFT, padx=5)
+    configure_button = tk.Button(app.plugin_frame, text="Configure Remote DB", command=configure_remote_db)
+    app.register_plugin_widget(configure_button)
+    login_button = tk.Button(app.plugin_frame, text="Login", command=login)
+    app.register_plugin_widget(login_button)

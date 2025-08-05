@@ -94,4 +94,5 @@ def register_plugin(app):
 
         tk.Button(mapping_window, text="Apply Mapping", command=apply_mapping).grid(row=len(db_columns) + 1, columnspan=2, pady=10)
 
-    tk.Button(app.plugin_frame, text="Import File", command=import_file).pack(side=tk.LEFT, padx=5)
+    import_button = tk.Button(app.plugin_frame, text="Import File", command=import_file)
+    app.register_plugin_widget(import_button)

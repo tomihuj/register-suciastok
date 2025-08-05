@@ -48,4 +48,5 @@ def register_plugin(app):
 
         tk.Button(window, text="Remove Duplicates", command=delete_duplicates).pack(pady=10)
 
-    tk.Button(app.plugin_frame, text="Find Duplicates", command=find_duplicates).pack(side=tk.LEFT, padx=5)
+    duplicates_button = tk.Button(app.plugin_frame, text="Find Duplicates", command=find_duplicates)
+    app.register_plugin_widget(duplicates_button)

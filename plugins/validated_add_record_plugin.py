@@ -52,4 +52,5 @@ def register_plugin(app):
 
         tk.Button(add_window, text="Save Record", command=save_record).grid(row=len(labels), columnspan=2, pady=10)
 
-    tk.Button(app.plugin_frame, text="Add Record", command=add_record).pack(side=tk.LEFT, padx=5)
+    add_record_button = tk.Button(app.plugin_frame, text="Add Record", command=add_record)
+    app.register_plugin_widget(add_record_button)

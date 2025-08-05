@@ -55,7 +55,8 @@ def register_plugin(app):
     import tkinter as tk
     def example_function():
         print("Plugin executed!")
-    tk.Button(app.plugin_frame, text="Example Plugin", command=example_function).pack(side=tk.LEFT, padx=5)
+    button = tk.Button(app.plugin_frame, text="Example Plugin", command=example_function)
+    app.register_plugin_widget(button)
 ```
 
 ---

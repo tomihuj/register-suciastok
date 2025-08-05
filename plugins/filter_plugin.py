@@ -21,9 +21,16 @@ def register_plugin(app):
         app.refresh_table()
 
     filter_frame = tk.Frame(app.root)
+    app.register_plugin_widget(filter_frame)
     filter_frame.pack(fill=tk.X, pady=5)
-    tk.Label(filter_frame, text="Filter:").pack(side=tk.LEFT, padx=5)
+
+    filter_label = tk.Label(filter_frame, text="Filter:")
+    app.register_plugin_widget(filter_label)
+
     app.filter_entry = tk.Entry(filter_frame)
+    app.register_plugin_widget(app.filter_entry)
     app.filter_entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
     app.filter_entry.bind("<KeyRelease>", apply_filter)
-    tk.Button(filter_frame, text="Clear Filter", command=clear_filter).pack(side=tk.LEFT, padx=5)
+
+    clear_button = tk.Button(filter_frame, text="Clear Filter", command=clear_filter)
+    app.register_plugin_widget(clear_button)
